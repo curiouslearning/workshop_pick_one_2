@@ -7,7 +7,18 @@ The various levels in a set will have different difficulties (in terms of number
 Along with identifying the lowercase and uppercase alphabets, the options will also contain image and sound of various words for identification as the level increases. 
 
 ### Screenshots
-
+<img align="left" src="./media/readmeImages/First.png" />
+<img src="./media/readmeImages/Level1Text.png" />
+Figure 1. Starting page of the application. <br/> 
+Figure 2. Level 1 - Easier level with Lowercase/UpperCase letter. <br/>
+<img align="left" src="./media/readmeImages/Level2Image.png" />
+<img src="./media/readmeImages/Level2Part2.png" />
+Figure 3. Difficulty Increased in Level 2 with introduction of Image and more options to choose from. <br/>
+Figure 4. On selecting the wrong option, it vanishes from the screen. <br/>
+<img align="left" src="./media/readmeImages/ScoreHalf.png" /> 
+<img src="./media/readmeImages/Score.png" />
+Figure 5. Did not get a Good score? Play again will lead to Figure 1. <br/>
+Figure 6. On receiving Full Score. <br/>
 
 ## Getting Started
 
@@ -35,10 +46,10 @@ The styles used in the game is found in the './style/styles.js' file.
 
 ### Data Collection Functions
 This app uses 2 of the 6 functions from Curious Learning Data Collection API
-(CuriousLearningDataAPI.js) to collect usage data so that application usage
+(CuriousLearningDataAPI.js) to collect data so that application usage
 can be analyzed. The file is located in the './js/' folder.
 
-1. reportResponse function is used to report the response of the user. In every level it sends the user's answer to a particular question, be it correct or not.  
+1. reportResponse function is used to report the response of the user. In every level it sends the user's answer to a particular question, be it correct or not. It also tracks the amount of time spent to give a response.   
 
 2. reportScore function is used to report performance of the user at the end of the game in terms of the total score scored. This score is a cumulative score of the all the levels.
 
