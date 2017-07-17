@@ -36,10 +36,11 @@ A JSON file is used to define what letter or word will appear on the different l
 The file is named pick_one.json and is located in the './js'. 
 
 ### Image Files
-All images of words used in this game is located in the './media' folder.
+All images used in this game are located in the './media' folder.
 
 ### Audio Files
-All images of words used in this game is located in the './media/sound' folder.
+All sounds used in this game are located in the './android/app/src/main/res/raw' folder.
+The "tadaa.wav" sound is made as a positive feedback from one level to the other, as a sign of celebration.
 
 ### Style Files
 The styles used in the game is found in the './style/styles.js' file.
