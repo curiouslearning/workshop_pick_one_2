@@ -1976,9 +1976,10 @@ containing a value of this type.
     public static final class raw {
         public static final int ambient_swamp=0x7f070000;
         public static final int celebrate=0x7f070001;
-        public static final int pop_touch=0x7f070002;
-        public static final int tada=0x7f070003;
-        public static final int whoosh=0x7f070004;
+        public static final int disgust=0x7f070002;
+        public static final int pop_touch=0x7f070003;
+        public static final int tadaa=0x7f070004;
+        public static final int whoosh=0x7f070005;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f080000;

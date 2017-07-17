@@ -20,12 +20,12 @@ import {
 } from 'react-navigation';
 
 import _ from 'lodash';
-import Preferences from './Preferences';
-import Trial from './Trial';
+//import Preferences from './Preferences';
+import PickOne from './js/PickOne';
 import AnimatedSprite from 'react-native-animated-sprite';
-import monsterSprite from './sprites/monster/monsterSprite';
+import monsterSprite from './js/sprites/monster/monsterSprite';
 import gameIcon from "./media/gameIcon/gameIcon";
-import styles from './styles';
+import styles from './style/styles';
 
 const Sound = require('react-native-sound');
 const screenWidth = Dimensions.get('window').width;
@@ -51,15 +51,26 @@ export default class LearnByDoing extends Component {
       {
         name: 'BUBBLE',
         imgSrc: require('./media/gameIcon/game2_icon_color.png'),
-        location: {top: 130, left: 100},
+        location: {top: 150, left: 50},
         frameIndex: [3],
       },
       {
         name: 'BUBBLE22',
         imgSrc: require('./media/gameIcon/game6_icon_color.png'),
-        location: {top: 230, left: 200},
+        location: {top: 70, left: 250},
         frameIndex: [5],
       },
+      {
+        name: 'BUBBLE1',
+        imgSrc: require('./media/gameIcon/game6_icon_color.png'),
+        location: {top: 440, left: 50},
+        frameIndex: [7],
+      },{
+        name: 'BUBBLE1',
+        imgSrc: require('./media/gameIcon/game6_icon_color.png'),
+        location: {top: 350, left: 250},
+        frameIndex: [11],
+      }
     ];
 
     this.iconList = _.shuffle(iconList);
@@ -74,7 +85,6 @@ export default class LearnByDoing extends Component {
   componentDidMount () {
     _.forEach(this.iconList, (icon, index) => {
       const timeout = setTimeout(() => {
-        debugger;
         let iconRef = this.refs[this.iconRefs[index]];
         iconRef.startTween();
       }, 100 * index);
@@ -105,8 +115,8 @@ export default class LearnByDoing extends Component {
   
   startSize () {
     return ({
-      width: 240 * this.scale.image,
-      height: 240 * this.scale.image,
+      width: 340 * this.scale.image,
+      height: 340 * this.scale.image,
     });
   }
 
@@ -144,13 +154,12 @@ export default class LearnByDoing extends Component {
   press () {
     const { navigate } = this.props.navigation;
     console.log("PRESS PRESS");
-    navigate('trial');
+    navigate('PickOne');
   }
   
   initIcons () {
     this.icons = _.map(this.iconList, (icon, index) => {
       const ref = ("gameRef" + index);
-      debugger;
       this.iconRefs.push(ref);
       console.log("REFS = ", ref);
       return (<AnimatedSprite
@@ -177,10 +186,6 @@ export default class LearnByDoing extends Component {
       <View
         style={{ flex: 1, }}
       >
-        <Button
-          onPress={() => navigate('Prefs')}
-          title="Go to Prefs"
-        />
         <Image
           source={require('./media/backgrounds/Game_5_Background_1280.png')}
           style={{
@@ -188,9 +193,10 @@ export default class LearnByDoing extends Component {
             width: 1280,
             height: 800,
           }}
-        />
+        >
       {this.icons}
-        
+      <Text style={styles.heading}>Pick One of X</Text>
+       </Image> 
       </View>
     );
   }
@@ -198,8 +204,7 @@ export default class LearnByDoing extends Component {
 
 const App = StackNavigator({
   Main: {screen: LearnByDoing},
-  Prefs: {screen: Preferences},
-  trial:{screen: Trial},
+  PickOne:{screen: PickOne},
 });
 
 LearnByDoing.propTypes = {
